@@ -30,7 +30,7 @@ export default class Email {
 
       // Send the email
       const response = await Brevo.sendTransacEmail(sendSmtpEmail);
-      console.log('Email sent successfully:', response);
+      // console.log('Email sent successfully:', response);
     } catch (error) {
       console.error('Error sending email:');
       console.error(error.message || error);

@@ -74,7 +74,7 @@ userSchema.pre('save', function (next) {
 });
 
 userSchema.pre('save', async function (next) {
-  console.log('Generating avatar...');
+  // console.log('Generating avatar...');
   if (!this.photo || this.photo === 'default.jpg') {
     try {
       const response = await fetch(
@@ -132,7 +132,7 @@ userSchema.methods.createPasswordResetToken = function () {
     .update(resetToken)
     .digest('hex');
 
-  console.log({ resetToken }, this.passwordResetToken);
+  // console.log({ resetToken }, this.passwordResetToken);
 
   // Set the passwordResetExpires field
   this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
